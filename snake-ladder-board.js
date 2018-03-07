@@ -23,6 +23,6 @@ function generateBoard(numPapan) {
     }
   }
   return laddersBoard;
-}
+} 
 
 console.log(generateBoard(8));
