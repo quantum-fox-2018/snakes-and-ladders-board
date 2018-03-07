@@ -1,7 +1,7 @@
 function generateBoard(num) {
   let arrBoard = boardTemplate(num);
   let angka = 1;
-  let arr = buatArray(num);
+  let arr;
   for(let i = arrBoard.length-1; i >= 0; i--) {
     arr = [];
     for(let j = arrBoard.length-1; j >= 0; j--) {
@@ -17,15 +17,6 @@ function generateBoard(num) {
     }
   }
   return arrBoard;
-}
-
-function buatArray(num) {
-  let arr = [];
-  for(let i = 0; i < num; i++) {
-    arr.push([]);
-  }
-
-  return arr;
 }
 
 function boardTemplate(num) {
