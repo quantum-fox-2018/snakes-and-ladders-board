@@ -1,6 +1,13 @@
+const chalk = require('chalk');
+
+
 function generateBoard(input) {
-    let result = []
-    let count = input * input
+    var result = []
+    let size = input * input
+    let count = size
+    let dice = Math.floor((Math.random() * 6) + 1)
+    let start = 0
+    var countX = 0
 
     if (input % 2 == 0) {
         for (let i = 0; i < input; i++) {
@@ -40,9 +47,46 @@ function generateBoard(input) {
         }
     }
 
-    return result
+    // console.log(result.length);
+
+    while (start < size) {
+
+        start += dice
+
+        if (start > size) {
+            start = size
+        }
+        for (let i = 0; i < result.length; i++) {
+            for (j = 0; j < result.length; j++) {
+
+                if (result[i][j] == start) {
+                    result[i][j] = 'X'
+                    var indexRow = i
+                    var indexX = j
+                }
+            }
+        }
+        console.log(chalk.green('==================SEDANG BERJALAN================'))
+        console.log(result)
+        result[indexRow][indexX] = start
+
+        countX++
+        sleep(500)
+    }
+    console.log(chalk.red(`Jumlah kocokan dadu sebanyak : ${countX} kali`))
+    
+
 }
 
-console.log(generateBoard(10))
-console.log(generateBoard(15))
-console.log(generateBoard(8))
+function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+      if ((new Date().getTime() - start) > milliseconds){
+        break;
+      }
+    }
+  }
+
+generateBoard(10)
+// generateBoard(15)
+// generateBoard(8)
