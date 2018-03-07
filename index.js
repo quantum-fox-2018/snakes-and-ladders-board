@@ -16,26 +16,16 @@ function generateBoard(size){
         temp.push(boardCount)
         boardCount++
       }
-      temp = reverseArray(temp)
-      for (var m = 0; m < temp.length; m++) {
+      for (var m = temp.length-1; m >= 0; m--) {
         board[j].push(temp[m])
       }
-    }
-    else{
+    }else{
       for (var k = 0; k < size; k++) {
         board[j].push(boardCount)
         boardCount++
       }
     }
     flag++
-  }
-
-  function reverseArray(arr){
-    var resultArr = [];
-    for (var l = arr.length-1; l >= 0; l--) {
-      resultArr.push(arr[l])
-    }
-    return resultArr
   }
 
   // var counter = 1;
