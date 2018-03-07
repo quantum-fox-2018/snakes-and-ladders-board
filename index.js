@@ -1,5 +1,3 @@
-const chalk = require('chalk');
-
 
 function generateBoard(input) {
     var result = []
@@ -66,14 +64,14 @@ function generateBoard(input) {
                 }
             }
         }
-        console.log(chalk.green('==================SEDANG BERJALAN================'))
+        console.log('==================SEDANG BERJALAN================')
         console.log(result)
         result[indexRow][indexX] = start
 
         countX++
-        sleep(500)
+        sleep(200)
     }
-    console.log(chalk.red(`Jumlah kocokan dadu sebanyak : ${countX} kali`))
+    console.log(`Jumlah kocokan dadu sebanyak : ${countX} kali`)
     
 
 }
