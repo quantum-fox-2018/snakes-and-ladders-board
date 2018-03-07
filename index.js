@@ -1,18 +1,18 @@
-function generateBoard(dimensions) {
+function generateBoard(num) {
   var arrBoard = [];
-  var num = dimensions * dimensions;
+  var numTotal = num * num;
 
-  for (let i = dimensions; i > 0; i--) {
+  for (let i = 0; i < num; i++) {
     let arrRow = [];
     if (i % 2 === 0) {
-      for (let kanan = 0; kanan < dimensions; kanan++) {
-        arrRow.push(num);
-        num--;
+      for (let kanan = 0; kanan < num; kanan++) {
+        arrRow.push(numTotal);
+        numTotal--;
       }
-    } else if (i % 2 !== 0) {
-      num = num - dimensions;
-      up = num + 1;
-      for (let kiri = 0; kiri < dimensions; kiri++) {
+    } else if (i % 2 === 1) {
+      numTotal = numTotal - num;
+      up = numTotal + 1;
+      for (let kiri = 0; kiri < num; kiri++) {
         arrRow.push(up);
         up++;
       }
@@ -24,7 +24,5 @@ function generateBoard(dimensions) {
 }
 
 console.log(generateBoard(10));
-console.log('');
 console.log(generateBoard(8));
-console.log('');
 console.log(generateBoard(15));
