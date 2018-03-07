@@ -3,16 +3,21 @@ function manageBoard(num){
     let innerBoard = [];
     let boxNum = num*num;
 
-    for(let counter = 0; counter<num; counter++){
+    for(let counter = num; counter>0; counter--){
         innerBoard = [];
-        for(let counter2 = 0; counter2<num; counter2++){
-            innerBoard.push(boxNum);
-            boxNum--;
-        }
-        if(counter%2 !== 0 && num%2 === 0) {
-            innerBoard.reverse();
-        }else if(counter%2 === 0 && num%2 !== 0){
-            innerBoard.reverse();
+        if(counter%2 === 0){
+            for(let counter2 = 0; counter2<num; counter2++){
+                innerBoard.push(boxNum);
+                boxNum--
+            }
+        }else if(counter%2 !== 0){
+            boxNum-=num;
+            let angkaNaik = boxNum +1;
+            
+            for(let counter2=0; counter2<num; counter2++){
+                innerBoard.push(angkaNaik);
+                angkaNaik++;
+            }
         }
         boardResult.push(innerBoard);
     }
@@ -23,3 +28,4 @@ function manageBoard(num){
 console.log(manageBoard(10));
 console.log(manageBoard(15));
 console.log(manageBoard(5));
+console.log(manageBoard(3));
