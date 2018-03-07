@@ -8,30 +8,22 @@ function snakesandladder(num) {
 
   for (var i = 0; i < num; i++) {
     var temp = []
-    if (num % 2 === 0) {
-      for (var j = 0; j < num; j++) {
-        if (i % 2 === 0) {
-          temp.push(counter)
-          if (j !== num-1) {
-            counter--
-          }
-        } else if (i % 2 !== 0) {
-          temp.push(counter)
-          if (j !== num-1) {
+    for (var j = 0; j < num; j++) {
+      if (i % 2 === 0) {
+        temp.push(counter)
+        if (j !== num-1) {
+          if (num % 2 !== 0) {
             counter++
+          } else {
+            counter--
           }
         }
-      }
-    } else {
-      for (var j = 0; j < num; j++) {
-        if (i % 2 !== 0) {
-          temp.push(counter)
-          if (j !== num-1) {
+      } else if (i % 2 !== 0) {
+        temp.push(counter)
+        if (j !== num-1) {
+          if (num % 2 !== 0) {
             counter--
-          }
-        } else if (i % 2 === 0) {
-          temp.push(counter)
-          if (j !== num-1) {
+          } else {
             counter++
           }
         }
