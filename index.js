@@ -10,7 +10,7 @@ function snakeLaddersBoard(dimensi){
 
   var counter = 0
   for(let j=0; j<dimensi; j++){
-    if(j%2===0){
+    if(j%2!==0){
       debugger
       // console.log(true)
       let rows = []
@@ -21,7 +21,7 @@ function snakeLaddersBoard(dimensi){
       }
       papan.push(rows)
     }
-    else if(j%2!==0){
+    else if(j%2===0){
       debugger
       let rows = []
       for(let k=0; k<dimensi; k++){
@@ -38,7 +38,7 @@ function snakeLaddersBoard(dimensi){
 
   return papan
 }
-console.log(snakeLaddersBoard(10))
+console.log(snakeLaddersBoard(11))
 
 function reverseArr(input) {
     var ret = []
